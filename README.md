@@ -1,9 +1,16 @@
-# docker-library-redis
+# Docker base images
 
-Tiny Redis base Docker image
+## Redis
 
-```
-REPOSITORY                                   TAG                  IMAGE ID            CREATED             SIZE
-docker-library-redis                         latest               2b2e47ce3cf3        47 seconds ago      7.024 MB
-gcr.io/XXXXXXXXXXX/docker-library-redis      latest               2b2e47ce3cf3        47 seconds ago      7.024 MB
+Protected mode is OFF.
+
+Pass more parameters to `redis-server` via command:
+
+```yaml
+redis:
+  restart: always
+  image: sergef/docker-library-redis:3.2.9
+  ports:
+    - 6379:6379
+  command: --loglevel verbose
 ```
